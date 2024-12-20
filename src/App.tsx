@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/App.css';
+
+import Split from 'react-split';
+
+import Aside from './components/Aside';
+import Main from './components/Main';
+import Navibar from './components/Navibar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <div className="link-danger">
+      <Navibar />
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Split
+          sizes={[25, 75]}
+          minSize={100}
+          expandToMin={false}
+          gutterSize={3}
+          gutterAlign="center"
+          snapOffset={30}
+          dragInterval={1}
+          direction="horizontal"
+          cursor="col-resize"
+          style={{ display: 'flex', height: '100vh' }}
+        >
+          <Aside
+            style={
+              {
+                /*additional styles*/
+              }
+            }
+          />
+          <Main
+            style={
+              {
+                /*additional styles*/
+              }
+            }
+          />
+        </Split>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

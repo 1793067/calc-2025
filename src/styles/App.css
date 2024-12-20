@@ -1,0 +1,13 @@
+.gutter {
+  background: gray;
+  cursor: col-resize;
+}
+
+.gutter:hover {
+  background: darkgray;
+  width: 3px !important;
+}
+
+.Aside,
+.Main {
+}
