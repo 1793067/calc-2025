@@ -5,14 +5,14 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 function ControlledTabsExample() {
-  const [key, setKey] = useState('home');
+  const [key, setKey] = useState('table');
   const tabItems = ['requirements', 'table', 'docs'];
 
   return (
     <Tabs
       id="fill-tab-example"
       activeKey={key}
-      onSelect={(k) => setKey(k)}
+      onSelect={(k) => setKey(k as string)} //typescript
       className="mb-3"
     >
       {tabItems.map((tab) => (
